@@ -11,23 +11,17 @@ FaceCept3D is a realtime framework for 3D face analysis and recognition. It cont
 
 FaceCept3D is based on the following works:
 
-* Robust Real-Time Extreme Head Pose Estimation. ([pdf] (http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6977105))
+* Robust Real-Time Extreme Head Pose Estimation. [[pdf](http://disi.unitn.it/~sebe/publications/Sergey-ICPR14.pdf)]
 
-* Facial expression recognition under a wide range of head poses. ([pdf] (http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7163098)) 
-
-## Contents
-
-1. [Requirements]
-2. [Installation]
+* Facial expression recognition under a wide range of head poses. [[pdf](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7163098)]
 
 ## Requirements
 
 To install FaceCept3D you need to have the following libraries available
 
-* [Point Cloud Library PCL] (http://www.pointclouds.org/) version 1.7
-* [OpenCV] (http://opencv.org/)) >= version 2.4
-* [Qt] (http://download.qt.io/archive/qt/4.8/4.8.6/) version 4.8 (required by VTK 5.6)
-* [ZeroMQ] (http://zeromq.org/)
+* [Point Cloud Library PCL](http://www.pointclouds.org/) version 1.7
+* [OpenCV](http://opencv.org/)) >= version 2.4
+* [Qt](http://download.qt.io/archive/qt/4.8/4.8.6/) version 4.8 (required by VTK 5.6)
 
 and their dependencies.
 
@@ -35,9 +29,7 @@ In addition, if you plan to use a depth sensor, you will to install the driver. 
 
 To use MS Kinect sensors:
 
-* On windows install their ([SDK (v 1.8)] (http://www.microsoft.com/en-us/download/details.aspx?id=40278)). OpenNI driver also works on Windows
-
-* On windows install OpenNI driver (see installation instruction)
+* On windows install their [SDK (v 1.8)](http://www.microsoft.com/en-us/download/details.aspx?id=40278)
 
 ## Installation
 
@@ -45,7 +37,7 @@ FaceCept3D was tested on Windows and Linux. Mac users should follow linux instal
 
 ### Linux
 
-* **OpenNI and SensorKin drivers**. A great guide is [here] (https://bitbucket.org/samirmenon/scl-manips-v2/wiki/vision/kinect).
+* **OpenNI and SensorKin drivers**. A great guide is [here](https://bitbucket.org/samirmenon/scl-manips-v2/wiki/vision/kinect).
 
 * **Prerequsities**. Install the following libraries using your package manager:
 
@@ -76,7 +68,25 @@ In addition, you need to install cmake if you don't have it:
   make
   ```
 
-
 ### Windows
 
 Windows installation is somewhat more involved, therefore I'll add it a bit later. In meanwhile, feel free to do it by yourself using the provided CMakeLists.txt
+
+### Citing FaceCept3D
+
+If you use FaceCept3D in your research, please cite the one of the following (or both):
+
+	@inproceedings{Tulyakov2014,
+		author = {Tulyakov, S. and Vieriu, R. L. and Semeniuta, S. and Sebe, N.},
+		booktitle = {Internation Conference on Pattern Recognition},
+		title = {{Robust Real-Time Extreme Head Pose Estimation}},
+		year = {2014},
+	}
+
+	@inproceedings{Vieriu2015,
+		author = {Vieriu, R. L. and Tulyakov, S. and Sangineto, E. and Semeniuta, S. and Sebe, N.},
+		booktitle = {Face and Gesture Recognition},
+		title = {{Facial Expression Recognition under a Wide Range of Head Poses}},
+		year = {2015},
+	}
+
