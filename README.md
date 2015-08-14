@@ -17,7 +17,7 @@ FaceCept3D is based on the following works:
 
 Here is an example image of head pose estimation using FaceCept3D.
 
-![Head Pose Estimation Examples](https://github.com/sergeytulyakov/FaceCept3D/blob/master/home/HalfHeadPoseEstimationExamples.jpg)
+![Head Pose Estimation Examples](https://github.com/sergeytulyakov/FaceCept3D/blob/master/docs/home/HalfHeadPoseEstimationExamples.jpg)
 
 See FaceCept3D [wiki](https://github.com/sergeytulyakov/FaceCept3D/wiki) for more details.
 
@@ -80,7 +80,15 @@ FaceCept3D was tested on Windows and Linux. Mac users should follow linux instal
 
 Windows installation is somewhat more involved, therefore I'll add it a bit later. In meanwhile, feel free to do it by yourself using the provided CMakeLists.txt
 
-### Citing FaceCept3D
+### What to do next
+
+Have a look at our [wiki](https://github.com/sergeytulyakov/FaceCept3D/wiki) pages:
+
+1. [Getting Started](https://github.com/sergeytulyakov/FaceCept3D/wiki/1.-Gettings-Started)
+2. [Point Cloud Registration](https://github.com/sergeytulyakov/FaceCept3D/wiki/2.-Point-Cloud-Registration)
+3. [Personalized Template Creation with FaceCept3D](https://github.com/sergeytulyakov/FaceCept3D/wiki/3.-Personalized-Template-Creation)
+
+## Citing FaceCept3D
 
 If you use FaceCept3D in your research, please cite the one of the following (or both):
 
