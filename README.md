@@ -11,9 +11,15 @@ FaceCept3D is a realtime framework for 3D face analysis and recognition. It cont
 
 FaceCept3D is based on the following works:
 
-* Robust Real-Time Extreme Head Pose Estimation. [[pdf](http://disi.unitn.it/~sebe/publications/Sergey-ICPR14.pdf)]
+* Robust Real-Time Extreme Head Pose Estimation. [[pdf](https://github.com/sergeytulyakov/FaceCept3D/blob/master/papers/Robust%20Real-Time%20Extreme%20Head%20Pose%20Estimation.pdf)]
 
-* Facial expression recognition under a wide range of head poses. [[pdf](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7163098)]
+* Facial expression recognition under a wide range of head poses. [[pdf](https://github.com/sergeytulyakov/FaceCept3D/blob/master/papers/Facial%20Expression%20Recognition%20under%20a%20Wide%20Range%20of%20Head%20Poses.pdf)]
+
+Here is an example image of head pose estimation using FaceCept3D.
+
+![Head Pose Estimation Examples](https://github.com/sergeytulyakov/FaceCept3D/blob/master/home/HalfHeadPoseEstimationExamples.jpg)
+
+See FaceCept3D [wiki](https://github.com/sergeytulyakov/FaceCept3D/wiki) for more details.
 
 ## Requirements
 
