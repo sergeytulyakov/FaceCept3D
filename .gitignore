@@ -1,0 +1,13 @@
+*.suo
+*.sdf
+*.user
+*.opensdf
+*.txt
+*.idea
+!CMakeLists.txt
+
+build
+ipch
+Debug
+Release
+x64

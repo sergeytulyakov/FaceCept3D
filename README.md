@@ -20,7 +20,7 @@ FaceCept3D is based on the following works:
 To install FaceCept3D you need to have the following libraries available
 
 * [Point Cloud Library PCL](http://www.pointclouds.org/) version 1.7
-* [OpenCV](http://opencv.org/)) >= version 2.4
+* [OpenCV](http://opencv.org/) >= version 2.4
 * [Qt](http://download.qt.io/archive/qt/4.8/4.8.6/) version 4.8 (required by VTK 5.6)
 
 and their dependencies.
@@ -45,19 +45,21 @@ FaceCept3D was tested on Windows and Linux. Mac users should follow linux instal
   boost, eigen, flann, vtk (v 5.6), qhull, opencv, tbb, qt (v 4.8)
   ```
 
-For Ubuntu 14.04 the following command will do the trick:
+	For Ubuntu 14.04 the following command will do the trick:
 
-  ```Shell
-  sudo apt-get install libboost-all-dev libeigen3-dev libflann-dev libvtk5-dev libqhull-dev libopencv-dev libtbb-dev libqt4-dev
-  ```
+	```Shell
+	sudo apt-get install libboost-all-dev libeigen3-dev libflann-dev libvtk5-dev libqhull-dev libopencv-dev libtbb-dev libqt4-dev
+	```
 
-In addition, you need to install cmake if you don't have it:
+	In addition, you need to install cmake if you don't have it:
 
-  ```Shell
-  sudo apt-get install cmake
-  ```
+	```Shell
+	sudo apt-get install cmake
+	```
 
-* **Install PCL**. We need to build and install pcl, since the version [here] (http://pointclouds.org/downloads/linux.html) is built without without *-std=c++11* modifier. This [guide] (http://pointclouds.org/downloads/source.html) will help you build pcl from source.
+* **Install PCL**. We need to build and install pcl, since the version [here](http://pointclouds.org/downloads/linux.html) is built without *-std=c++11* modifier. This [guide](http://pointclouds.org/downloads/source.html) will help you build pcl from source.
+
+* **Check that everything works**. Try running pcl_openni_viewier. If you don't see any output, then there is something wrong with your installation.
 
 * **Build FaceCept3D**. 
 
