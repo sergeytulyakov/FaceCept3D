@@ -117,7 +117,7 @@ To simplify the process we provide all the dependencies in a binary format. All 
 	
 	The rest is configured in the Project Properties files. If something doesn't work feel free to inspect the *.props files in the Config folder. If you want to use your versions of the dependencies, you will have to change the *.props files. 
 	
-	Open 3dheadposeestimation.sln using your version of Visual Studio and try to build. If you have a newer Visual Studio that 2010, *do not convert the solution to a newer toolchain*. Since the dependencies are build with msvc2010-win64 it will not link.
+	Open 3dheadposeestimation.sln using your version of Visual Studio and try to build. If you have a newer Visual Studio than 2010, **do not agree to convert the solution to a newer toolchain**, since the dependencies are built with msvc2010-win64 it will not link.
 
 ### What to do next
 
