@@ -4,7 +4,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
   <PropertyGroup>
-    <LibraryPath>$(KINECTSDK10_DIR)\lib\amd64;$(FACEPT3D_3RDPARTY_DIR)\Boost\lib;$(FACEPT3D_3RDPARTY_DIR)\FLANN\lib;$(FACEPT3D_3RDPARTY_DIR)\Opencv\lib;$(FACEPT3D_3RDPARTY_DIR)\PCL\lib;$(FACEPT3D_3RDPARTY_DIR)\Qhull\lib;$(FACEPT3D_3RDPARTY_DIR)\Qt\lib;$(FACEPT3D_3RDPARTY_DIR)\VTK\lib\vtk-5.8;$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64</LibraryPath>
+    <LibraryPath>$(KINECTSDK10_DIR)\lib\amd64;$(FACECEPT3D_3RDPARTY_DIR)\Boost\lib;$(FACECEPT3D_3RDPARTY_DIR)\FLANN\lib;$(FACECEPT3D_3RDPARTY_DIR)\Opencv\lib;$(FACECEPT3D_3RDPARTY_DIR)\PCL\lib;$(FACECEPT3D_3RDPARTY_DIR)\Qhull\lib;$(FACECEPT3D_3RDPARTY_DIR)\Qt\lib;$(FACECEPT3D_3RDPARTY_DIR)\VTK\lib\vtk-5.8;$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
