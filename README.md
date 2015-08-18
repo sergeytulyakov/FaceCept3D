@@ -72,6 +72,8 @@ FaceCept3D was tested on Windows and Linux. Mac users should follow linux instal
   ```Shell
   git clone https://github.com/sergeytulyakov/FaceCept3D.git
   cd FaceCept3D
+  mkdir build
+  cd build
   cmake ..
   make
   ```
