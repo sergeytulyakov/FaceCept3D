@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 
-#include <Grabber/OpenNIGrabber.h>
-
 #include <Filter/MovingLeastSquaresFilter.h>
 #include <Filter/Filters.h>
 

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A46EAD61-34BD-4EFA-B545-B8FD8C2C3BBD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HeadPoseEstimationFramework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Config\CommonProperties.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="..\Config\CommonProperties.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Align\CloudMapper.cpp" />
+    <ClCompile Include="Align\IncrementalHeadTemplateCreator.cpp" />
+    <ClCompile Include="Align\TransformationEstimationHPE.cpp" />
+    <ClCompile Include="Grabber\PCDGrabber.cpp" />
+    <ClCompile Include="WindowsOnly\Processor\KinectSDKConverterProcessor.cpp" />
+    <ClCompile Include="WindowsOnly\Grabber\KinectSDKGrabber.cpp" />
+    <ClCompile Include="Processor\DepthPreprocessingProcessor.cpp" />
+    <ClCompile Include="Processor\HeadExtractionProcessor.cpp" />
+    <ClCompile Include="Processor\ConverterProcessor.cpp" />
+    <ClCompile Include="DataObject\MapDataStorage.cpp" />
+    <ClCompile Include="Converter\KinectDataConverter.cpp" />
+    <ClCompile Include="Exception\HPEException.cpp" />
+    <ClCompile Include="Grabber\GrabberBase.cpp" />
+    <ClCompile Include="Grabber\ProviderGrabber.cpp" />
+    <ClCompile Include="Settings\HPESettings.cpp" />
+    <ClCompile Include="Processor\TemplateCreatorProcessor.cpp" />
+    <ClCompile Include="Processor\ShowCloudProcessor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Align\CloudMapper.h" />
+    <ClInclude Include="Align\IHeadTemplateCreator.h" />
+    <ClInclude Include="Align\TemplateAlignment.h" />
+    <ClInclude Include="Align\TransformationEstimationHPE.h" />
+    <ClInclude Include="DataObject\CloudXYZRGBA.h" />
+    <ClInclude Include="Align\IncrementalHeadTemplateCreator.h" />
+    <ClInclude Include="DataObject\HeadPoseInfo.h" />
+    <ClInclude Include="DataObject\LandmarksObject.h" />
+    <ClInclude Include="Grabber\PCDGrabber.h" />
+    <ClInclude Include="Filter\MovingLeastSquaresFilter.h" />
+    <ClInclude Include="rapidjson\allocators.h" />
+    <ClInclude Include="rapidjson\document.h" />
+    <ClInclude Include="rapidjson\encodedstream.h" />
+    <ClInclude Include="rapidjson\encodings.h" />
+    <ClInclude Include="rapidjson\error\en.h" />
+    <ClInclude Include="rapidjson\error\error.h" />
+    <ClInclude Include="rapidjson\filereadstream.h" />
+    <ClInclude Include="rapidjson\filestream.h" />
+    <ClInclude Include="rapidjson\filewritestream.h" />
+    <ClInclude Include="rapidjson\internal\dtoa.h" />
+    <ClInclude Include="rapidjson\internal\itoa.h" />
+    <ClInclude Include="rapidjson\internal\meta.h" />
+    <ClInclude Include="rapidjson\internal\pow10.h" />
+    <ClInclude Include="rapidjson\internal\stack.h" />
+    <ClInclude Include="rapidjson\internal\strfunc.h" />
+    <ClInclude Include="rapidjson\memorybuffer.h" />
+    <ClInclude Include="rapidjson\memorystream.h" />
+    <ClInclude Include="rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="rapidjson\prettywriter.h" />
+    <ClInclude Include="rapidjson\rapidjson.h" />
+    <ClInclude Include="rapidjson\reader.h" />
+    <ClInclude Include="rapidjson\stringbuffer.h" />
+    <ClInclude Include="rapidjson\writer.h" />
+    <ClInclude Include="WindowsOnly\Processor\KinectSDKConverterProcessor.h" />
+    <ClInclude Include="WindowsOnly\Grabber\KinectSDKGrabber.h" />
+    <ClInclude Include="Processor\DepthPreprocessingProcessor.h" />
+    <ClInclude Include="Processor\HeadExtractionProcessor.h" />
+    <ClInclude Include="Processor\ConverterProcessor.h" />
+    <ClInclude Include="DataObject\IDataObject.h" />
+    <ClInclude Include="DataObject\IDataStorage.h" />
+    <ClInclude Include="DataObject\MapDataStorage.h" />
+    <ClInclude Include="DataObject\RawFrames.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Converter\IDataConverter.h" />
+    <ClInclude Include="Converter\KinectDataConverter.h" />
+    <ClInclude Include="DataFilter\IDataFilter.h" />
+    <ClInclude Include="Descriptors2D\IDescriptor.h" />
+    <ClInclude Include="Features\Calculator\FeatureCalculatorBase.h" />
+    <ClInclude Include="Features\DepthProjectionFeature.h" />
+    <ClInclude Include="Exception\HPEException.h" />
+    <ClInclude Include="Features\Calculator\FeatureCalculator.h" />
+    <ClInclude Include="Features\IFeature.h" />
+    <ClInclude Include="Features\Calculator\IFeatureCalculator.h" />
+    <ClInclude Include="Features\Sampler\IPatchSampler.h" />
+    <ClInclude Include="Features\ProjectionFeatureBase.h" />
+    <ClInclude Include="Filter\BoxFilter.h" />
+    <ClInclude Include="Filter\CenteredBoxFilter.h" />
+    <ClInclude Include="Filter\FilteringQueue.h" />
+    <ClInclude Include="Filter\Filters.h" />
+    <ClInclude Include="Filter\FunctorFilter.h" />
+    <ClInclude Include="Filter\ICenterCloudFilter.h" />
+    <ClInclude Include="Filter\ICloudFilter.h" />
+    <ClInclude Include="Grabber\GrabberBase.h" />
+    <ClInclude Include="GraphicalObjects\IGraphicalObject.h" />
+    <ClInclude Include="Features\Sampler\GridSampler.h" />
+    <ClInclude Include="Features\RGBProjectionFeature.h" />
+    <ClInclude Include="Processor\IProcessor.h" />
+    <ClInclude Include="Grabber\ProviderGrabber.h" />
+    <ClInclude Include="Settings\HPESettings.h" />
+    <ClInclude Include="Interface\IInterface.h" />
+    <ClInclude Include="Landmarks.h" />
+    <ClInclude Include="Provider\IDataProvider.h" />
+    <ClInclude Include="Processor\ShowCloudProcessor.h" />
+    <ClInclude Include="SurfaceReconstruction\ISurfaceReconstructor.h" />
+    <ClInclude Include="Processor\TemplateCreatorProcessor.h" />
+    <ClInclude Include="Tracker\ICPTemplateTracker.h" />
+    <ClInclude Include="UI\PointPicker.h" />
+    <ClInclude Include="UI\ShowCloud.h" />
+    <ClInclude Include="UI\ShowMesh.h" />
+    <ClInclude Include="UI\VisualizerCommon.h" />
+    <ClInclude Include="vtkBindings\MarchingCubes.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

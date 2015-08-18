@@ -17,8 +17,11 @@
 #include <Settings/HPESettings.h>
 
 #ifndef __linux__
+	#include <objbase.h>
     #include <WindowsOnly/Grabber/KinectSDKGrabber.h>
     #include <WindowsOnly/Processor/KinectSDKConverterProcessor.h>
+#else
+	#include <Grabber/OpenNIGrabber.h>
 #endif
 
 
