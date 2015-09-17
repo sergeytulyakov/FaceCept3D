@@ -129,18 +129,18 @@ Have a look at our [wiki](https://github.com/sergeytulyakov/FaceCept3D/wiki) pag
 
 ## Citing FaceCept3D
 
-If you use FaceCept3D in your research, please cite the one of the following (or both):
+If you use FaceCept3D in your research, please cite one of the following (or both):
 
 	@inproceedings{Tulyakov2014,
 		author = {Tulyakov, S. and Vieriu, R. L. and Semeniuta, S. and Sebe, N.},
-		booktitle = {Internation Conference on Pattern Recognition},
+		booktitle = {International Conference on Pattern Recognition},
 		title = {{Robust Real-Time Extreme Head Pose Estimation}},
 		year = {2014},
 	}
 
 	@inproceedings{Vieriu2015,
 		author = {Vieriu, R. L. and Tulyakov, S. and Sangineto, E. and Semeniuta, S. and Sebe, N.},
-		booktitle = {Face and Gesture Recognition},
+		booktitle = {Automatic Face and Gesture Recognition},
 		title = {{Facial Expression Recognition under a Wide Range of Head Poses}},
 		year = {2015},
 	}
