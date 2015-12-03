@@ -10,6 +10,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemplateCreator", "Template
 		{A46EAD61-34BD-4EFA-B545-B8FD8C2C3BBD} = {A46EAD61-34BD-4EFA-B545-B8FD8C2C3BBD}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemplateTracker", "TemplateTracker\TemplateTracker.vcxproj", "{68A9917E-A682-4013-8D30-389AB45A9E0D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A46EAD61-34BD-4EFA-B545-B8FD8C2C3BBD} = {A46EAD61-34BD-4EFA-B545-B8FD8C2C3BBD}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -40,6 +45,18 @@ Global
 		{39EBEEC1-29C0-48BA-9858-E593CAEE7757}.Release|Win32.Build.0 = Release|Win32
 		{39EBEEC1-29C0-48BA-9858-E593CAEE7757}.Release|x64.ActiveCfg = Release|x64
 		{39EBEEC1-29C0-48BA-9858-E593CAEE7757}.Release|x64.Build.0 = Release|x64
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|Win32.Build.0 = Debug|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|x64.ActiveCfg = Debug|x64
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Debug|x64.Build.0 = Debug|x64
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|Win32.ActiveCfg = Release|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|Win32.Build.0 = Release|Win32
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|x64.ActiveCfg = Release|x64
+		{68A9917E-A682-4013-8D30-389AB45A9E0D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

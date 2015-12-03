@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{39EBEEC1-29C0-48BA-9858-E593CAEE7757}</ProjectGuid>
+    <ProjectGuid>{68A9917E-A682-4013-8D30-389AB45A9E0D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TemplateCreator</RootNamespace>
+    <RootNamespace>TemplateTracker</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -53,17 +53,17 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\Config\CommonProperties.props" />
     <Import Project="..\Config\CommonPropertiesLibsDebug.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\Config\CommonProperties.props" />
     <Import Project="..\Config\CommonPropertiesLibsRelease.props" />
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -71,16 +71,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <IncludePath>../HeadPoseEstimationFramework;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../HeadPoseEstimationFramework;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>d:\Projects\HeadPoseEstimation\HeadPoseEstimationFramework;$(DLIB_INCLUDE);$(HPE_INCLUDE);$(RAPIDJSON_INCLUDE);$(ZMQ_INCLUDE);$(PCSDK_INCLUDE);$(KINECTSDK10_DIR)/inc;$(VTK_INCLUDE);$(QHULL_INCLUDE);$(TBB_INCLUDE);$(EIGEN_INCLUDE);$(FLANN_INCLUDE);$(QT_INCLUDE);$(PCL_INCLUDE);$(OPEN_NI_INCLUDE);$(OPENCV_INCLUDE);$(BOOST_INCLUDE_MSVC10);$(ProjectDir);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include</IncludePath>
+    <LibraryPath>d:\Projects\HeadPoseEstimation\x64\Release\;$(DLIB_LIBS);$(ZMQ_LIBS);$(PCSDK_LIBS);$(FACECEPT_LIBS);$(HPE_LIBS);$(ALL_LIBS);$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64;</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -100,10 +100,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/NODEFAULTLIB:LIBCMTD.lib %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,27 +133,36 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>dlib_release.lib;HeadPoseEstimationFramework_Release.lib;libpxc.lib;libpxcutils.lib;Kinect10.lib;opengl32.lib;MapReduceMPI.lib;mpistubs.lib;QVTK.lib;vtkalglib.lib;vtkCharts.lib;vtkCommon.lib;vtkDICOMParser.lib;vtkexoIIc.lib;vtkexpat.lib;vtkFiltering.lib;vtkfreetype.lib;vtkftgl.lib;vtkGenericFiltering.lib;vtkGeovis.lib;vtkGraphics.lib;vtkhdf5.lib;vtkHybrid.lib;vtkImaging.lib;vtkInfovis.lib;vtkIO.lib;vtkjpeg.lib;vtklibxml2.lib;vtkmetaio.lib;vtkNetCDF.lib;vtkNetCDF_cxx.lib;vtkpng.lib;vtkproj4.lib;vtkRendering.lib;vtksqlite.lib;vtksys.lib;vtktiff.lib;vtkverdict.lib;vtkViews.lib;vtkVolumeRendering.lib;vtkWidgets.lib;vtkzlib.lib;opencv_calib3d2410.lib;opencv_contrib2410.lib;opencv_core2410.lib;opencv_features2d2410.lib;opencv_flann2410.lib;opencv_gpu2410.lib;opencv_highgui2410.lib;opencv_imgproc2410.lib;opencv_legacy2410.lib;opencv_ml2410.lib;opencv_nonfree2410.lib;opencv_objdetect2410.lib;opencv_ocl2410.lib;opencv_photo2410.lib;opencv_stitching2410.lib;opencv_superres2410.lib;opencv_ts2410.lib;opencv_video2410.lib;opencv_videostab2410.lib;qhullstatic.lib;pcl_common_release.lib;pcl_features_release.lib;pcl_filters_release.lib;pcl_io_ply_release.lib;pcl_io_release.lib;pcl_kdtree_release.lib;pcl_keypoints_release.lib;pcl_octree_release.lib;pcl_outofcore_release.lib;pcl_people_release.lib;pcl_recognition_release.lib;pcl_registration_release.lib;pcl_sample_consensus_release.lib;pcl_search_release.lib;pcl_segmentation_release.lib;pcl_surface_release.lib;pcl_tracking_release.lib;pcl_visualization_release.lib;flann_cpp_s.lib;libboost_atomic-vc100-mt-1_55.lib;libboost_chrono-vc100-mt-1_55.lib;libboost_context-vc100-mt-1_55.lib;libboost_coroutine-vc100-mt-1_55.lib;libboost_date_time-vc100-mt-1_55.lib;libboost_exception-vc100-mt-1_55.lib;libboost_filesystem-vc100-mt-1_55.lib;libboost_graph-vc100-mt-1_55.lib;libboost_iostreams-vc100-mt-1_55.lib;libboost_locale-vc100-mt-1_55.lib;libboost_log-vc100-mt-1_55.lib;libboost_log_setup-vc100-mt-1_55.lib;libboost_math_c99-vc100-mt-1_55.lib;libboost_math_c99f-vc100-mt-1_55.lib;libboost_math_c99l-vc100-mt-1_55.lib;libboost_math_tr1-vc100-mt-1_55.lib;libboost_math_tr1f-vc100-mt-1_55.lib;libboost_math_tr1l-vc100-mt-1_55.lib;libboost_prg_exec_monitor-vc100-mt-1_55.lib;libboost_program_options-vc100-mt-1_55.lib;libboost_random-vc100-mt-1_55.lib;libboost_regex-vc100-mt-1_55.lib;libboost_serialization-vc100-mt-1_55.lib;libboost_signals-vc100-mt-1_55.lib;libboost_system-vc100-mt-1_55.lib;libboost_test_exec_monitor-vc100-mt-1_55.lib;libboost_thread-vc100-mt-1_55.lib;libboost_timer-vc100-mt-1_55.lib;libboost_unit_test_framework-vc100-mt-1_55.lib;libboost_wave-vc100-mt-1_55.lib;libboost_wserialization-vc100-mt-1_55.lib;phonon4.lib;QAxContainer.lib;QAxServer.lib;Qt3Support4.lib;QtCLucene4.lib;QtCore4.lib;QtDeclarative4.lib;QtDesigner4.lib;QtDesignerComponents4.lib;QtGui4.lib;QtHelp4.lib;qtmain.lib;QtMultimedia4.lib;QtNetwork4.lib;QtOpenGL4.lib;QtScript4.lib;QtScriptTools4.lib;QtSql4.lib;QtSvg4.lib;QtTest4.lib;QtUiTools.lib;QtWebKit4.lib;QtXml4.lib;QtXmlPatterns4.lib;$(HPE_LIBS_RELEASE);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ShowTwoCloudsProcessor.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="UIProcessor.h" />
+    <ClInclude Include="VisuilizeProcessor.h" />
+    <ClInclude Include="VoxelizeProcessor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ShowTwoCloudsProcessor.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TemplateCreator.cpp" />
+    <ClCompile Include="TemplateTracker.cpp" />
     <ClCompile Include="UIProcessor.cpp" />
+    <ClCompile Include="VisuilizeProcessor.cpp" />
+    <ClCompile Include="VoxelizeProcessor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
