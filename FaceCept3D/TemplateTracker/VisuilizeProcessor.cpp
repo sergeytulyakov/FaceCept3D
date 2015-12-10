@@ -51,7 +51,7 @@ void VisuilizeProcessor::Process(hpe::IDataStorage::Ptr dataStorage)
     cylinderCoefficients.values.push_back(0.002);
 
     Eigen::Vector3f angles = VectorToEulerAngles(landmarks->landmarks[2].point.getVector3fMap() - landmarks->landmarks[3].point.getVector3fMap());
-    std::string anglesText = (boost::format("Head pose in degrees:\n Yaw   %5.2f\n Tilt  %5.2f\n Roll  %5.2f") % angles(0) % angles(1) % angles(2)).str();
+    std::string anglesText = (boost::format("Head pose in degrees:\n  Yaw   %5.2f\n  Tilt  %5.2f\n  Roll  %5.2f") % angles(0) % angles(1) % angles(2)).str();
 
     if (m_first)
     {
@@ -62,13 +62,13 @@ void VisuilizeProcessor::Process(hpe::IDataStorage::Ptr dataStorage)
         m_visualizer.addCylinder(cylinderCoefficients);
         m_visualizer.setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 0, ((float)0x73) / 255, ((float)0x3C) / 255, "cylinder");
         m_visualizer.addPointCloud(cloud->cloud, m_cloudKey);
-        m_visualizer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 4, m_cloudKey);
+        m_visualizer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, m_cloudKey);
         m_visualizer.addPointCloud(eyes, m_landmarksKey);
         m_visualizer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 25, 0, 0, m_landmarksKey);
         m_visualizer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 5, m_landmarksKey);
-        m_visualizer.addText(anglesText, 25, 175, 17, 0, 0, 1, "anglesText");
-		m_visualizer.addText("Facial expression:", 25, 140, 17, 0, 0, 1, "anglesTextCaption");
-		m_visualizer.setBackgroundColor(1, 1, 1);
+        m_visualizer.addText(anglesText, 25, 175, 17, 1, 1, 1, "anglesText");
+		//m_visualizer.addText("Facial expression:", 25, 100, 17, 1, 1, 1, "anglesTextCaption");
+		m_visualizer.setBackgroundColor(0, 0, 0);
         if (m_saveScreenshots)
         {
             if (boost::filesystem::exists("camera.cam"))
@@ -95,30 +95,50 @@ void VisuilizeProcessor::Process(hpe::IDataStorage::Ptr dataStorage)
         m_visualizer.removeShape("cylinder");
         m_visualizer.addCylinder(cylinderCoefficients);
         m_visualizer.removeShape("anglesText");
-        m_visualizer.addText(anglesText, 25, 175, 17, 0, 0, 1, "anglesText");
+        m_visualizer.addText(anglesText, 25, 175, 17, 1, 1, 1, "anglesText");
         m_visualizer.setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 0, ((float)0x73) / 255, ((float)0x3C) / 255, "cylinder");
         m_visualizer.updatePointCloud(cloud->cloud, m_cloudKey);
         m_visualizer.updatePointCloud(eyes, m_landmarksKey);
 
-        if (m_haveFerData)
-        {
-            int delta = 19;
+   //     if (m_haveFerData)
+   //     {
+   //         int delta = 19;
+			//int x = 20;
+			//int y = 140 - delta;
+
+   //         auto recognizedExpression = std::max_element(m_ferData.begin(), m_ferData.end());
+   //         int recognizedExpressionIndex = std::distance(m_ferData.begin(), recognizedExpression);
+
+   //         for (int i = 0; i < m_ferData.size(); i++)
+   //         {
+   //             double colorScale = i == recognizedExpressionIndex ? 2 : 1;
+   //             std::string message = (boost::format("  %s %f") % m_expressionLabels[i] % m_ferData[i]).str();
+   //             std::string textObjectLabel = (boost::format("ferText%1%") % i).str();
+   //             m_visualizer.removeShape(textObjectLabel);
+			//	m_visualizer.addText(message, x, y, 17, (2 - colorScale) * 0.5, (2 - colorScale) * 0.5, colorScale * 0.5, textObjectLabel);
+   //             y -= delta;
+   //         }
+   //     }
+
+		if (m_haveFerData)
+		{
 			int x = 20;
-			int y = 140 - delta;
+			int y = 75;
+			int delta = 16;
 
-            auto recognizedExpression = std::max_element(m_ferData.begin(), m_ferData.end());
-            int recognizedExpressionIndex = std::distance(m_ferData.begin(), recognizedExpression);
+			auto recognizedExpression = std::max_element(m_ferData.begin(), m_ferData.end());
+			int recognizedExpressionIndex = std::distance(m_ferData.begin(), recognizedExpression);
 
-            for (int i = 0; i < m_ferData.size(); i++)
-            {
-                double colorScale = i == recognizedExpressionIndex ? 2 : 1;
-                std::string message = (boost::format("  %s %f") % m_expressionLabels[i] % m_ferData[i]).str();
-                std::string textObjectLabel = (boost::format("ferText%1%") % i).str();
-                m_visualizer.removeShape(textObjectLabel);
-				m_visualizer.addText(message, x, y, 17, (2 - colorScale) * 0.5, (2 - colorScale) * 0.5, colorScale * 0.5, textObjectLabel);
-                y -= delta;
-            }
-        }
+			for (int i = 0; i < m_ferData.size(); i++)
+			{
+				double colorScale = i == recognizedExpressionIndex ? 2 : 1;
+				std::string message = (boost::format("  %1%: %2%") % m_expressionLabels[i] % m_ferData[i]).str();
+				std::string textObjectLabel = (boost::format("ferText%1%") % i).str();
+				m_visualizer.removeShape(textObjectLabel);
+				m_visualizer.addText(message, x, y, 17, colorScale * 0.5, colorScale * 0.5, colorScale * 0.5, textObjectLabel);
+				y += delta;
+			}
+		}
     }
 
     m_visualizer.spinOnce(1);

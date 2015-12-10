@@ -6,8 +6,8 @@ FaceCept3D: 3D Face Analysis and Recognition
 FaceCept3D is a realtime framework for 3D face analysis and recognition. It contains a set of extendible components that can be combined to fulfil a specific task. At this step we open source the following functionality:
 
 1. Person-specific template creation
-2. Extreme head pose estimation [coming soon]
-3. Facial expression analysis [coming soon]
+2. Extreme head pose estimation
+3. Facial expression analysis
 
 FaceCept3D is based on the following works:
 

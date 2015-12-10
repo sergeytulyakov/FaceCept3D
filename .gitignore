@@ -11,3 +11,5 @@ ipch
 Debug
 Release
 x64
+data/DetectorData
+data/FERData
